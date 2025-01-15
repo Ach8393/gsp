@@ -1,26 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      output: {
-        format: 'es', // Ensure the output format is ES modules
-      },
-    },
-  },
-  server: {
-    headers: {
-      'Content-Type': 'application/javascript', // Ensure correct MIME type for local dev server
-    },
-  },
-  esbuild: {
-    target: 'esnext', // Ensure modern JavaScript features
-  },
-  resolve: {
-    alias: {
-      '@': '/src', // Optional: Create an alias for cleaner imports
-    },
-  },
-});
+})
